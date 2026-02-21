@@ -1,0 +1,15 @@
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos del sistema Windows
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+
+# Archivos temporales de Office
+~$*.docx
+~$*.xlsx
