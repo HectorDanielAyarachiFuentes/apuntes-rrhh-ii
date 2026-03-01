@@ -1,0 +1,1067 @@
+NotebookLM ha mejorado x10
+
+Instalar NotebookLM MCP
+
+Instala y configura el servidor MCP de NotebookLM por mí:
+Instala el paquete notebooklm-mcp-server usando uv (o pip si uv no está disponible).
+Añádelo a mi configuración MCP (normalmente en ~/.config/opencode/opencode.json o similar).
+Ejecuta el comando de autenticación (notebooklm-mcp-auth) y abre un navegador para autorizarlo.
+Verifica que la instalación funciona listando mis cuadernos de NotebookLM.
+Asegúrate de:
+Usar el método de instalación correcto para mi sistema.
+Configurar correctamente el servidor MCP en mi archivo de configuración.
+Guiarme durante el proceso de autenticación en el navegador.
+Confirmar al final que todo funciona correctamente.
+(recomendaciones: si no tienes instalado node.js o python 3.1 seguramente de problemas de instalacion)
+Paso 1 escribir la primera idea de donde queremos aprender/profundizar.
+Quiero hacer crecer mi canal de YouTube, enfocado en inteligencia artificial, con el objetivo de escalarlo a una base sólida de suscriptores y, a partir de ahí, lanzar una formación en School sobre inteligencia artificial y automatizaciones.
+Para conseguirlo, necesito identificar qué áreas de conocimiento debo dominar para que todo el sistema funcione de forma coherente: crecimiento en YouTube → autoridad → conversión a formación.
+Lo que quiero es que me indiques entre 5 y 8 áreas clave de conocimiento que debería aprender y tener en cuenta.
+Para cada área, quiero:
+Una breve explicación de en qué consiste y por qué es importante.
+2 o 3 temas relativamente generales dentro de esa área.
+2 o 3 temas muy específicos y accionables, más técnicos o prácticos.
+El objetivo es tener una visión clara y estructurada de todo lo que necesito aprender y dominar para crecer en YouTube y crear una formación sólida y escalable en School sobre IA y automatizaciones.
+PASO 2. Creamos Skill para que sepa perfectamente usar NotebookLM MCP
+Crearas una skill para mí basándote en la información que aparece a continuación para acceder al MCP con Notebook LM. Además, ten en cuenta que te voy a mostrar todas las cosas diferentes que puede hacer. Quiero que crees una skill basándote en lo que aparece a continuación.
+Paso 3 (Si no se importa)
+Ya se han creado los cinco recursos diferentes. Lo que me gustaría que hicieras ahora es que sigas adelante y los importes en los cinco notebooks
+Paso 4: Crear dashboard en base a los cuadernos.
+# 🚀 PROMPT MAESTRO: Dashboard Interactivo + Classroom para NotebookLM
+
+## 📋 CONTEXTO Y OBJETIVO PRINCIPAL
+
+Necesito que crees una **aplicación web completa, interactiva y visualmente impactante** que transforme mis cuadernos de NotebookLM en una experiencia inmersiva con dos módulos principales:
+
+1. **Dashboard Analytics** - Estilo deportivo/gaming con métricas animadas
+2. **Classroom Academy** - Entorno educativo tipo escuela/comunidad
+
+---
+
+## 🎨 DIRECTRICES DE DISEÑO (CRÍTICAS)
+
+### Estética General
+- **Tono visual**: Futurista-neón con toques de glassmorphism y gradientes vibrantes
+- **Paleta principal**: 
+  - Fondo oscuro (#0a0a0f, #1a1a2e)
+  - Acentos neón (cyan #00fff5, magenta #ff00ff, verde lima #39ff14)
+  - Glassmorphism con blur y transparencias
+- **Tipografía distintiva**: 
+  - Títulos: "Orbitron", "Audiowide" o "Rajdhani" (futurista/tech)
+  - Cuerpo: "Space Grotesk", "Outfit" o "DM Sans"
+  - NUNCA usar: Inter, Arial, Roboto, system fonts
+
+### Animaciones Obligatorias
+- **Entrada de página**: Staggered reveal con delays escalonados
+- **Hover effects**: Transformaciones 3D, glows, escalados suaves
+- **Scroll animations**: Elementos que aparecen con fade + slide
+- **Micro-interacciones**: Ripple effects, pulsos en botones, partículas
+- **Transiciones entre vistas**: Smooth morphing, page transitions
+
+### Elementos Visuales Especiales
+- Fondos con gradientes mesh animados o partículas flotantes
+- Bordes con efecto neón/glow pulsante
+- Cards con efecto glassmorphism (backdrop-blur)
+- Iconografía custom con Lucide React o similar
+- Sombras con color (box-shadow con tonos de acento)
+
+---
+
+## 📊 MÓDULO 1: DASHBOARD ANALYTICS (Estilo Sports/Gaming)
+
+### Estructura Principal
+┌─────────────────────────────────────────────────────────────┐ │  HEADER: Logo + Navegación + Toggle Dark/Light + Usuario    │ ├─────────────────────────────────────────────────────────────┤ │  HERO STATS: 4 tarjetas grandes con KPIs principales        │ │  (Total Cuadernos | Temas Completados | Horas Estudio | XP) │ ├─────────────────────────────────────────────────────────────┤ │  GRÁFICOS INTERACTIVOS (2 columnas):                        │ │  - Radar Chart: Progreso por categoría                      │ │  - Line Chart: Actividad semanal/mensual                    │ │  - Bar Chart: Comparativa entre cuadernos                   │ │  - Donut Chart: Distribución de temas                       │ ├─────────────────────────────────────────────────────────────┤ │  LISTA DE CUADERNOS: Grid de cards seleccionables           │ │  (con filtros, búsqueda y ordenamiento)                     │ ├─────────────────────────────────────────────────────────────┤ │  LOGROS Y BADGES: Sistema de gamificación                   │ └─────────────────────────────────────────────────────────────┘
+### Funcionalidades Detalladas
+
+#### 1. Hero Stats Cards
+```jsx
+// Cada card debe incluir:
+- Icono animado (pulsing o rotating)
+- Número grande con counter animation (de 0 al valor final)
+- Etiqueta descriptiva
+- Mini gráfico sparkline de tendencia
+- Indicador de cambio (+12% ↑) con color verde/rojo
+- Hover: elevación 3D + glow intensificado
+2. Selector de Cuadernos
+// Dropdown/Modal con:
+- Lista de todos los cuadernos de NotebookLM
+- Preview thumbnail de cada cuaderno
+- Búsqueda en tiempo real
+- Tags de categoría con colores
+- Indicador de último acceso
+- Al seleccionar: toda la UI se actualiza con datos de ese cuaderno
+3. Gráficos Interactivos (usar Recharts)
+// Radar Chart - "Mapa de Competencias"
+- Ejes: diferentes áreas temáticas del cuaderno
+- Tooltip personalizado con detalles
+- Animación de entrada tipo "drawing"
+- Opción de comparar múltiples cuadernos superpuestos
+
+// Line Chart - "Curva de Aprendizaje"
+- Eje X: Timeline (días/semanas)
+- Eje Y: Progreso/Actividad
+- Puntos interactivos con tooltips
+- Área con gradiente debajo de la línea
+- Zoom y pan habilitados
+
+// Bar Chart - "Batalla de Conocimientos"
+- Comparativa visual entre temas
+- Barras horizontales estilo ranking
+- Animación de crecimiento
+- Labels con porcentajes
+
+// Donut/Pie Chart - "Distribución del Saber"
+- Segmentos clickeables
+- Leyenda interactiva
+- Centro con estadística principal
+- Animación de rotación inicial
+4. Sistema de Gamificación
+// Panel de Logros:
+- Badges desbloqueados (con efecto shine)
+- Badges bloqueados (en gris con candado)
+- Barra de progreso hacia siguiente nivel
+- XP total y ranking
+- Rachas de estudio (streaks)
+- Confetti animation al desbloquear logro
+5. Filtros y Controles
+// Barra de herramientas:
+- Selector de rango de fechas (date picker)
+- Filtros por categoría/tag
+- Toggle de vista (grid/lista)
+- Botón de exportar datos
+- Modo comparación (seleccionar 2+ cuadernos)
+🎓 MÓDULO 2: CLASSROOM ACADEMY
+Estructura Principal
+┌─────────────────────────────────────────────────────────────┐
+│  HEADER: Logo Academy + Nav + Perfil Estudiante + Notifs    │
+├─────────────────────────────────────────────────────────────┤
+│  BANNER HERO: "Bienvenido a tu Academia Personal"           │
+│  (con ilustración/animación de aula futurista)              │
+├─────────────────────────────────────────────────────────────┤
+│  MIS AULAS (Grid de Cuadernos):                             │
+│  Cada cuaderno = 1 "Aula" con:                              │
+│  - Imagen de portada temática                               │
+│  - Título del cuaderno                                      │
+│  - Progreso circular                                        │
+│  - Número de lecciones                                      │
+│  - Último acceso                                            │
+├─────────────────────────────────────────────────────────────┤
+│  COMUNIDAD: Feed de actividad, compañeros, mensajes         │
+└─────────────────────────────────────────────────────────────┘
+Vista Interior de Aula (al hacer clic en un cuaderno)
+┌─────────────────────────────────────────────────────────────┐
+│  BREADCRUMB: Classroom > [Nombre Cuaderno]                  │
+├─────────────────────────────────────────────────────────────┤
+│  HEADER AULA:                                               │
+│  - Imagen grande del tema (generada o placeholder)          │
+│  - Título del cuaderno                                      │
+│  - Descripción                                              │
+│  - Stats: X lecciones | Y horas | Z% completado             │
+├─────────────────────────────────────────────────────────────┤
+│  SIDEBAR         │  CONTENIDO PRINCIPAL                     │
+│  ─────────────   │  ─────────────────────────────────────   │
+│  📁 Módulo 1     │  [Vista de lección seleccionada]         │
+│    └─ Tema 1.1   │                                          │
+│    └─ Tema 1.2   │  - Imagen/Video del tema                 │
+│  📁 Módulo 2     │  - Contenido textual                     │
+│    └─ Tema 2.1   │  - Recursos descargables                 │
+│  📁 Módulo 3     │  - Quiz interactivo                      │
+│  ...             │  - Notas personales                      │
+├─────────────────────────────────────────────────────────────┤
+│  BARRA INFERIOR: Anterior | Progreso | Siguiente            │
+└─────────────────────────────────────────────────────────────┘
+Funcionalidades Detalladas del Classroom
+1. Cards de Aulas (Cuadernos)
+// Cada card incluye:
+- Imagen de portada (placeholder si no hay, con gradiente + icono)
+- Overlay con gradiente oscuro
+- Título con efecto de texto brillante
+- Badge de categoría
+- Progress ring circular (0-100%)
+- Contador de lecciones/temas
+- Hover: 
+  - Scale up suave
+  - Reveal de botón "Entrar al Aula"
+  - Parallax tilt effect (3D)
+- Click: Transición animada al interior
+2. Sistema de Módulos y Temas
+// Sidebar colapsable:
+- Acordeón con módulos/secciones
+- Cada módulo tiene icono + título + contador
+- Temas con checkbox de completado
+- Indicador visual de tema actual
+- Barra de progreso por módulo
+- Drag & drop para reordenar (opcional)
+
+// Al hacer clic en un tema:
+- Transición suave del contenido
+- Scroll automático al inicio
+- Actualización de breadcrumb
+- Marcado automático como "visto"
+3. Visor de Contenido
+// Para cada tema mostrar:
+- Imagen destacada (con lightbox al click)
+- O video embebido (con controles custom)
+- Contenido markdown renderizado
+- Bloques de código con syntax highlighting
+- Callouts/alerts para info importante
+- Sección de recursos/archivos adjuntos
+4. Sistema de Medios (Imágenes y Videos)
+// Galería de imágenes:
+- Grid masonry de imágenes relacionadas
+- Lightbox con navegación
+- Zoom y pan en imágenes
+- Información del archivo
+
+// Reproductor de video:
+- Controles personalizados (play, pause, seek, volume)
+- Velocidad de reproducción
+- Modo picture-in-picture
+- Notas timestamped
+- Marcadores de secciones
+5. Elementos de Comunidad
+// Panel de comunidad:
+- Avatar y nombre del estudiante
+- Nivel y XP
+- Feed de actividad reciente
+- "Compañeros de estudio" (simulados)
+- Sistema de comentarios por lección
+- Likes y reacciones
+- Leaderboard semanal
+6. Sistema de Quizzes
+// Quiz por tema:
+- Preguntas múltiple opción
+- Feedback inmediato (correcto/incorrecto)
+- Animaciones de éxito/error
+- Puntuación final con estrellas
+- Opción de reintentar
+- Guardar mejores puntuaciones
+🔄 NAVEGACIÓN ENTRE MÓDULOS
+Sistema de Tabs/Routing
+// Navegación principal:
+- Tab 1: 📊 Dashboard (métricas y analytics)
+- Tab 2: 🎓 Classroom (aulas y aprendizaje)
+- Tab 3: 🏆 Logros (gamificación completa)
+- Tab 4: ⚙️ Configuración
+
+// Transiciones entre tabs:
+- Slide horizontal animado
+- Fade cross-dissolve
+- Mantener estado de cada vista
+📱 RESPONSIVE DESIGN
+Breakpoints Obligatorios
+/* Mobile First */
+@media (max-width: 640px) {
+  /* Stack vertical, menú hamburguesa */
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Tablet: 2 columnas, sidebar colapsada */
+}
+
+@media (min-width: 1025px) {
+  /* Desktop: Layout completo */
+}
+Adaptaciones Mobile
+Menú hamburguesa con slide-in
+Cards en stack vertical
+Gráficos simplificados
+Bottom navigation bar
+Gestos swipe para navegación
+🗃️ ESTRUCTURA DE DATOS
+Modelo de Datos Sugerido
+// Cuaderno (Notebook)
+{
+  id: "notebook_001",
+  title: "Machine Learning Fundamentals",
+  description: "Curso completo de ML desde cero",
+  coverImage: "/images/ml-cover.jpg",
+  category: "Tecnología",
+  tags: ["AI", "Python", "Data Science"],
+  createdAt: "2024-01-15",
+  lastAccessed: "2024-03-20",
+  progress: 67,
+  totalHours: 24,
+  modules: [
+    {
+      id: "mod_001",
+      title: "Introducción al ML",
+      icon: "brain",
+      topics: [
+        {
+          id: "topic_001",
+          title: "¿Qué es Machine Learning?",
+          content: "markdown content...",
+          media: {
+            type: "image", // o "video"
+            url: "/media/topic001.jpg",
+            thumbnail: "/thumbnails/topic001.jpg"
+          },
+          duration: 15, // minutos
+          completed: true,
+          quiz: {
+            questions: [...],
+            bestScore: 85
+          }
+        }
+      ]
+    }
+  ],
+  stats: {
+    totalTopics: 45,
+    completedTopics: 30,
+    totalQuizzes: 12,
+    averageScore: 78,
+    streak: 7,
+    xpEarned: 2450
+  }
+}
+
+// Usuario
+{
+  id: "user_001",
+  name: "Estudiante",
+  avatar: "/avatars/default.png",
+  level: 12,
+  totalXP: 15600,
+  badges: ["early_bird", "quiz_master", "streak_7"],
+  preferences: {
+    theme: "dark",
+    notifications: true
+  }
+}
+🛠️ STACK TÉCNICO RECOMENDADO
+Para React (Recomendado)
+// Dependencias principales:
+- React 18+
+- Tailwind CSS (estilos)
+- Framer Motion (animaciones)
+- Recharts (gráficos)
+- Lucide React (iconos)
+- React Router (navegación)
+
+// Estructura de carpetas:
+/src
+  /components
+    /dashboard
+    /classroom
+    /shared
+  /hooks
+  /utils
+  /data
+  /styles
+Para HTML/CSS/JS Vanilla
+<!-- CDNs recomendados -->
+<link href="<https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Outfit:wght@300;400;600&display=swap>">
+<script src="<https://cdn.jsdelivr.net/npm/chart.js>"></script>
+<script src="<https://unpkg.com/lucide@latest>"></script>
+✨ EXTRAS DESEABLES
+Efectos Especiales
+[ ] Partículas flotantes en el fondo (particles.js)
+[ ] Cursor personalizado
+[ ] Efecto de escritura (typewriter) en títulos
+[ ] Sonidos sutiles en interacciones (opcional, toggle)
+[ ] Modo "Focus" que oculta distracciones
+[ ] Easter eggs ocultos
+Persistencia
+[ ] Guardar progreso en localStorage
+[ ] Exportar/importar datos como JSON
+[ ] Sincronización simulada con "nube"
+Accesibilidad
+[ ] Navegación por teclado
+[ ] Alto contraste opcional
+[ ] Reducir animaciones (prefers-reduced-motion)
+[ ] Labels ARIA apropiados
+📝 DATOS DE EJEMPLO PARA TESTING
+Por favor, genera datos de ejemplo realistas para al menos:
+5 cuadernos de diferentes categorías
+3-5 módulos por cuaderno
+4-8 temas por módulo
+Imágenes placeholder con gradientes únicos
+Estadísticas variadas y creíbles
+🎯 CRITERIOS DE ÉXITO
+La implementación será exitosa si:
+✅ Es visualmente IMPACTANTE y no genérica
+✅ Todas las animaciones son fluidas (60fps)
+✅ La navegación es intuitiva
+✅ Los datos se actualizan de forma reactiva
+✅ Es completamente responsive
+✅ Tiene identidad visual coherente y memorable
+✅ Los gráficos son interactivos y informativos
+✅ El Classroom permite explorar contenido de forma clara
+✅ Existe feedback visual en todas las interacciones
+✅ El código está bien organizado y es mantenible
+🚀 INSTRUCCIÓN FINAL
+Crea esta aplicación completa en un único archivo React (.jsx) o HTML con todo incluido. Prioriza la experiencia visual y las interacciones. Cada elemento debe sentirse premium y cuidadosamente diseñado. NO escatimes en animaciones ni en detalles visuales. Quiero que al verlo, el usuario diga "WOW".
+Comienza implementando el Dashboard completo con datos de ejemplo, luego el Classroom con toda su funcionalidad. Asegúrate de que ambos módulos estén conectados y compartan el mismo sistema de datos.
+¡Sorpréndeme con tu creatividad!
+🎬 MÓDULO ADICIONAL: YouTube Channel Analyzer + NotebookLM Integration
+📋 CONTEXTO
+Añade al Dashboard  una nueva sección/tab llamada "YouTube Growth Lab" que permita:
+Analizar cualquier canal de YouTube introduciendo su URL
+Cruzar los insights del canal con el conocimiento de los cuadernos de NotebookLM
+Generar un plan de acción personalizado para multiplicar x10 los resultados
+🎯 FUNCIONALIDAD PRINCIPAL
+Input de URL del Canal
+// Componente de entrada:
+- Campo de texto grande y prominente
+- Placeholder: "Pega la URL de tu canal de YouTube..."
+- Validación de URL en tiempo real
+- Ejemplos de formatos aceptados:
+  - youtube.com/@nombrecanal
+  - youtube.com/channel/UCxxxxx
+  - youtube.com/c/nombrecanal
+- Botón "Analizar Canal" con animación de carga
+- Historial de canales analizados previamente
+📊 ESTRUCTURA DEL ANÁLISIS
+Vista Principal del Analyzer
+┌─────────────────────────────────────────────────────────────┐
+│  🎬 YOUTUBE GROWTH LAB                                      │
+├─────────────────────────────────────────────────────────────┤
+│  [🔗 Input URL del Canal........................] [ANALIZAR]│
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌─────────────────┐  RESUMEN DEL CANAL                    │
+│  │   THUMBNAIL     │  Nombre: @TuCanal                     │
+│  │   DEL CANAL     │  Suscriptores: 12.5K                  │
+│  │                 │  Videos: 87                            │
+│  └─────────────────┘  Vistas totales: 1.2M                 │
+│                       Fecha creación: 2021                  │
+│                       Categoría detectada: Tech/Education   │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│  📈 SCORE DE SALUD DEL CANAL                               │
+│  ┌──────────────────────────────────────────────────────┐  │
+│  │  ████████████████████░░░░░░░░░░  67/100              │  │
+│  └──────────────────────────────────────────────────────┘  │
+│  "Tu canal tiene potencial pero necesita optimización"     │
+├─────────────────────────────────────────────────────────────┤
+│  🔴 PUNTOS CRÍTICOS    │  🟢 FORTALEZAS                    │
+│  ───────────────────   │  ─────────────────────────────    │
+│  • CTR bajo en títulos │  • Buena retención en tutoriales  │
+│  • Thumbnails genéricos│  • Comunidad activa               │
+│  • Sin consistencia    │  • Nicho bien definido            │
+│  • SEO débil           │  • Contenido de valor             │
+├─────────────────────────────────────────────────────────────┤
+│  🚀 PLAN x10: TUS 5 PASOS PARA MULTIPLICAR RESULTADOS      │
+│  (Basado en tu canal + conocimiento de tus NotebookLM)     │
+└─────────────────────────────────────────────────────────────┘
+🔍 SECCIONES DETALLADAS DEL ANÁLISIS
+1. Panel de Métricas Rápidas
+// Grid de 6 cards con métricas clave:
+{
+  metrics: [
+    {
+      icon: "users",
+      label: "Suscriptores",
+      value: "12.5K",
+      trend: "+8% este mes",
+      status: "good" // good, warning, critical
+    },
+    {
+      icon: "eye",
+      label: "Vistas/Video (media)",
+      value: "2.3K",
+      trend: "-12% vs anterior",
+      status: "warning"
+    },
+    {
+      icon: "clock",
+      label: "Frecuencia de subida",
+      value: "1.2 videos/semana",
+      trend: "Irregular",
+      status: "critical"
+    },
+    {
+      icon: "thumbs-up",
+      label: "Engagement Rate",
+      value: "4.7%",
+      trend: "Por encima de la media",
+      status: "good"
+    },
+    {
+      icon: "trending-up",
+      label: "Crecimiento mensual",
+      value: "+340 subs",
+      trend: "Acelerando",
+      status: "good"
+    },
+    {
+      icon: "target",
+      label: "CTR estimado",
+      value: "3.2%",
+      trend: "Necesita mejora",
+      status: "warning"
+    }
+  ]
+}
+2. Análisis de Puntos Críticos (Pain Points)
+// Lista expandible de problemas detectados:
+{
+  criticalPoints: [
+    {
+      severity: "high", // high, medium, low
+      icon: "alert-triangle",
+      title: "Títulos poco atractivos",
+      description: "El 70% de tus títulos no generan curiosidad ni urgencia",
+      examples: [
+        "❌ 'Tutorial de Python parte 3'",
+        "✅ 'El truco de Python que me hubiera ahorrado 100 horas'"
+      ],
+      linkedNotebook: "Copywriting & Headlines", // Conexión con NotebookLM
+      actionButton: "Ver estrategias en tu cuaderno"
+    },
+    {
+      severity: "high",
+      icon: "image",
+      title: "Thumbnails sin impacto visual",
+      description: "Tus miniaturas no destacan en el feed. Bajo contraste y sin rostro visible.",
+      recommendations: [
+        "Añade tu cara con expresión emocional",
+        "Usa máximo 3 palabras grandes",
+        "Contraste de colores complementarios"
+      ],
+      linkedNotebook: "Diseño & Branding"
+    },
+    {
+      severity: "medium",
+      icon: "calendar",
+      title: "Inconsistencia en publicación",
+      description: "Has subido entre 0 y 4 videos por semana. El algoritmo premia la consistencia.",
+      solution: "Establece 2 días fijos de publicación y cúmplelos durante 90 días."
+    },
+    {
+      severity: "medium",
+      icon: "search",
+      title: "SEO deficiente",
+      description: "Solo el 20% de tus videos tienen keywords optimizadas en título y descripción.",
+      linkedNotebook: "YouTube SEO Masterclass"
+    }
+  ]
+}
+3. Fortalezas Detectadas
+// Lo que ya hace bien el canal:
+{
+  strengths: [
+    {
+      icon: "star",
+      title: "Alto tiempo de retención en tutoriales",
+      detail: "Tus videos educativos mantienen 65% de retención (media: 40%)",
+      leverage: "Crea más contenido de este estilo y promuévelo"
+    },
+    {
+      icon: "message-circle",
+      title: "Comunidad activa",
+      detail: "Ratio comentarios/vistas superior a la media del nicho",
+      leverage: "Implementa más CTAs para comentarios"
+    },
+    {
+      icon: "target",
+      title: "Nicho bien definido",
+      detail: "Contenido enfocado sin dispersión temática",
+      leverage: "Conviértete en la referencia #1 de tu micro-nicho"
+    }
+  ]
+}
+🚀 PLAN x10: SISTEMA DE PASOS ACCIONABLES
+Estructura del Plan Personalizado
+      {
+
+{
+    bonusStrategies: [
+    title: "Tu Plan Personalizado para x10 en 90 días",
+    basedOn: [
+        priority: "ALTA",
+      "Cuaderno: YouTube Growth Hacks",
+      "Cuaderno: Copywriting Avanzado",
+      "Cuaderno: Algoritmo de YouTube 2024"
+    ],
+    steps: [
+      {
+        number: 1,
+        priority: "URGENTE",
+        title: "Rediseña tus thumbnails con el método F.A.C.E.",
+          "Crea playlists temáticas optimizadas"
+        description: "Aplica: Face (rostro) + Action (acción) + Contrast (contraste) + Emotion (emoción)",
+        tasks: [
+          "Rediseña los últimos 5 thumbnails de tus videos top",
+          "Usa la plantilla del cuaderno 'Diseño & Branding'",
+          "Testea con 2 variantes A/B"
+        ],
+        expectedImpact: "+40% CTR estimado",
+        notebookReference: {
+          notebook: "Diseño & Branding",
+          module: "Módulo 3: Thumbnails que convierten",
+          topic: "Método F.A.C.E."
+        },
+        resources: [
+          { type: "template", name: "Plantilla Canva Thumbnails" },
+          { type: "checklist", name: "Checklist pre-publicación" }
+        ]
+      },
+      {
+        number: 2,
+        title: "Reescribe títulos con fórmulas de curiosidad",
+        timeframe: "Semana 1-2",
+        description: "Transforma títulos descriptivos en ganchos irresistibles",
+        tasks: [
+          "Aplica la fórmula: [Número] + [Adjetivo Power] + [Beneficio] + [Timeframe]",
+          "Reescribe títulos de tus 10 videos con más potencial",
+          "Añade palabras trigger: secreto, error, nunca, siempre, gratis"
+        ],
+        expectedImpact: "+25% CTR, +60% impresiones",
+        notebookReference: {
+          notebook: "Copywriting Avanzado",
+          module: "Headlines magnéticos",
+          topic: "50 fórmulas de títulos virales"
+        }
+      },
+      {
+        number: 3,
+        priority: "ALTA",
+        title: "Implementa el Hook de 5 segundos",
+        timeframe: "Semana 2-3",
+        description: "Los primeros 5 segundos determinan si el viewer se queda",
+        tasks: [
+          "Elimina intros genéricas",
+          "Abre con la promesa del video",
+          "Usa pattern interrupt visual/auditivo",
+          "Añade texto en pantalla reforzando el hook"
+        ],
+        expectedImpact: "+30% retención en primeros 30 seg",
+        notebookReference: {
+          notebook: "YouTube Growth Hacks",
+          module: "Retención avanzada",
+          topic: "Anatomía del hook perfecto"
+        }
+      },
+      {
+        number: 4,
+        priority: "MEDIA",
+        title: "Calendario de contenido estratégico",
+        timeframe: "Semana 3-4",
+        description: "Publica consistentemente con contenido planificado",
+        tasks: [
+        description: "Convierte cada video largo en 3-5 Shorts para multiplicar alcance"
+          "Crea banco de 20 ideas usando tu cuaderno de Content Ideas",
+          "Prepara 4 videos de buffer",
+          "Configura recordatorios y deadlines"
+        ],
+        expectedImpact: "+50% favor del algoritmo",
+        notebookReference: {
+          notebook: "Productividad para Creadores",
+          module: "Sistemas de contenido",
+          topic: "Batching y planificación"
+        }
+      },
+      {
+        number: 5,
+        priority: "MEDIA",
+        title: "Optimización SEO de todo tu catálogo",
+        timeframe: "Semana 4-6",
+        description: "Haz que YouTube entienda y recomiende tu contenido",
+        tasks: [
+          "Investiga keywords con VidIQ/TubeBuddy",
+          "Optimiza títulos, descripciones y tags de TODOS tus videos",
+          "Añade timestamps y hashtags estratégicos",
+        ],
+        expectedImpact: "+100% tráfico orgánico de búsqueda",
+        notebookReference: {
+          notebook: "YouTube SEO Masterclass",
+          module: "SEO on-page",
+          topic: "Checklist de optimización completa"
+        }
+      }
+    ],
+      {
+        title: "Colaboraciones estratégicas",
+        description: "Identifica 5 canales de tamaño similar y propón colaboraciones"
+      },
+      {
+        title: "Shorts como combustible",
+      },
+        title: "Community Tab activo",
+        description: "Publica 3-4 veces por semana para mantener engagement"
+      }
+    ],
+    timeline: {
+      week1_2: "Thumbnails + Títulos (Quick Wins)",
+      week3_4: "Hooks + Calendario (Sistemas)",
+      week5_8: "SEO + Optimización (Crecimiento sostenido)",
+      week9_12: "Escalar + Colaboraciones (Explosión)"
+    }
+  }
+}
+🔗 INTEGRACIÓN CON NOTEBOOKLM
+Panel de Conexiones Inteligentes
+// Sidebar o modal que muestra:
+{
+  notebookConnections: {
+    title: "📚 Conocimiento aplicado de tus cuadernos",
+    description: "Hemos cruzado el análisis de tu canal con estos cuadernos:",
+    connections: [
+      {
+        notebook: "YouTube Growth Hacks",
+        relevance: 95,
+        appliedInsights: 12,
+        suggestedTopics: [
+          "Anatomía de un video viral",
+          "Hacks de retención",
+          "Estrategia de Shorts"
+        ]
+      },
+      {
+        notebook: "Copywriting Avanzado",
+        relevance: 88,
+        appliedInsights: 8,
+        suggestedTopics: [
+          "Fórmulas de títulos",
+          "Palabras de poder",
+          "CTAs que convierten"
+        ]
+      },
+      {
+        notebook: "Algoritmo YouTube 2024",
+        relevance: 92,
+        appliedInsights: 15,
+        suggestedTopics: [
+          "Cómo funciona el feed",
+          "Métricas que importan",
+          "Señales de engagement"
+        ]
+      }
+    ],
+    cta: "Ver cómo aplicar estos cuadernos →"
+  }
+}
+Función: "Profundizar con NotebookLM"
+// Cada recomendación tiene un botón que:
+- Abre el cuaderno relacionado en el Classroom
+- Navega directamente al módulo/tema relevante
+- Muestra un resumen contextualizado
+- Permite tomar notas específicas para tu canal
+🎨 DISEÑO VISUAL DE LA SECCIÓN
+Estética Específica para YouTube Analyzer
+/* Paleta adicional con rojo YouTube */
+:root {
+  --yt-red: #FF0000;
+  --yt-red-dark: #CC0000;
+  --yt-red-glow: rgba(255, 0, 0, 0.3);
+  
+  /* Gradientes temáticos */
+  --gradient-youtube: linear-gradient(135deg, #FF0000 0%, #FF4444 100%);
+  --gradient-growth: linear-gradient(135deg, #00C853 0%, #69F0AE 100%);
+  --gradient-warning: linear-gradient(135deg, #FF9100 0%, #FFAB40 100%);
+}
+
+/* Animaciones específicas */
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 var(--yt-red-glow); }
+  50% { box-shadow: 0 0 20px 10px var(--yt-red-glow); }
+}
+
+@keyframes score-fill {
+  from { width: 0%; }
+  to { width: var(--score-percent); }
+}
+Componentes Visuales Únicos
+// Score circular animado
+<CircularProgress 
+  value={67} 
+  size={200}
+  strokeWidth={12}
+  gradient={["#FF0000", "#00FF88"]}
+  animationDuration={2000}
+  showLabel={true}
+/>
+
+// Card de paso con progress tracker
+<StepCard
+  number={1}
+  priority="urgent"
+  completed={false}
+  hasNotebookLink={true}
+  glowOnHover={true}
+/>
+
+// Timeline visual del plan
+<TimelineTracker
+  weeks={12}
+  currentWeek={3}
+  milestones={[2, 4, 8, 12]}
+/>
+📱 INTERACCIONES Y UX
+Flujo del Usuario
+1. Usuario pega URL → Validación instantánea
+2. Click "Analizar" → Loading con animación de escaneo
+3. Resultados aparecen con staggered animation
+4. Scroll natural por secciones
+5. Cada problema tiene "Ver solución" expandible
+6. Plan x10 con checkboxes de progreso
+7. Botón "Guardar análisis" para historial
+8. Opción "Exportar como PDF"
+Estados de la UI
+// Estados a manejar:
+- empty: Sin URL introducida (mostrar ejemplos/guía)
+- loading: Analizando canal (skeleton + progress)
+- success: Análisis completo (toda la UI)
+- error: URL inválida o canal no encontrado
+- partial: Canal privado o datos limitados
+Animaciones Clave
+// Al cargar resultados:
+- Métricas: Counter animation de 0 al valor
+- Score: Barra que se llena progresivamente
+- Puntos críticos: Aparecen uno a uno con delay
+- Plan x10: Reveal secuencial de cada paso
+
+// Interacciones:
+- Hover en cards: Elevación + glow rojo sutil
+- Click en "Ver más": Expand con spring animation
+- Checkbox completado: Confetti micro-burst
+- Scroll a sección: Smooth scroll + highlight temporal
+💾 PERSISTENCIA Y TRACKING
+Guardar Análisis
+// Estructura para localStorage/estado:
+{
+  analyzedChannels: [
+    {
+      id: "analysis_001",
+      channelUrl: "youtube.com/@TuCanal",
+      channelName: "Tu Canal",
+      analyzedAt: "2024-03-20T10:30:00Z",
+      score: 67,
+      criticalPoints: 4,
+      planProgress: {
+        step1: { completed: true, completedAt: "..." },
+        step2: { completed: false },
+        // ...
+      },
+      notes: "..."
+    }
+  ]
+}
+Tracking de Progreso del Plan
+// Checkboxes persistentes para cada tarea
+// Barra de progreso general del plan
+// Fecha de inicio y días transcurridos
+// Recordatorios/notificaciones (opcional)
+🔧 NOTAS TÉCNICAS
+Obtención de Datos del Canal
+// NOTA: En un entorno real necesitarías:
+// - YouTube Data API v3
+// - OAuth para datos privados
+// - Web scraping (con limitaciones)
+
+// Para la demo/prototipo:
+// - Usar datos simulados basados en la URL
+// - O permitir input manual de métricas
+// - Generar análisis basado en patrones comunes
+Integración con el Dashboard Existente
+// Añadir como nuevo tab en navegación principal:
+tabs: [
+  { id: "dashboard", icon: "chart", label: "Dashboard" },
+  { id: "classroom", icon: "graduation", label: "Classroom" },
+  { id: "youtube", icon: "youtube", label: "YouTube Lab" }, // NUEVO
+  { id: "achievements", icon: "trophy", label: "Logros" },
+  { id: "settings", icon: "settings", label: "Config" }
+]
+
+// Compartir contexto de cuadernos con YouTube Analyzer
+// para las recomendaciones cruzadas
+✅ CHECKLIST DE IMPLEMENTACIÓN
+[ ] Input de URL con validación
+[ ] Estado de carga con animación
+[ ] Panel de métricas rápidas (6 cards)
+[ ] Score de salud visual (barra/círculo)
+[ ] Lista de puntos críticos expandible
+[ ] Lista de fortalezas
+[ ] Plan x10 con 5 pasos detallados
+[ ] Conexiones con NotebookLM visibles
+[ ] Botones "Ver en cuaderno" funcionales
+[ ] Checkboxes de progreso persistentes
+[ ] Historial de análisis
+[ ] Exportar análisis
+[ ] Responsive design
+[ ] Animaciones fluidas
+🎯 INSTRUCCIÓN PARA ANTIGRAVITY
+Integra este módulo "YouTube Growth Lab" en el Dashboard existente como una nueva pestaña. Debe sentirse como parte natural de la aplicación, manteniendo la misma estética futurista-neón pero con acentos en rojo YouTube. La magia está en conectar las recomendaciones del análisis con los cuadernos de NotebookLM del usuario, creando un sistema de mejora personalizado y accionable. Cada paso del Plan x10 debe enlazar directamente con contenido relevante del Classroom.
+¡El objetivo es que el usuario vea exactamente qué hacer, por qué hacerlo, y tenga acceso inmediato al conocimiento de sus cuadernos para ejecutarlo!
+## Prompt Skills
+
+```jsx
+# Antigravity Skill Creator System Instructions
+
+You are an expert developer specializing in creating "Skills" for the Antigravity agent environment. Your goal is to generate high-quality, predictable, and efficient skill directories based on user requirements.
+
+## 1. Core Structural Requirements
+
+Every skill you generate must follow this folder hierarchy:
+/mnt/skills/user/<skill-name>/ ├── SKILL.md          # Required: Main logic and instructions ├── ADVANCED.md       # Optional: Extended documentation (if >400 lines needed) ├── scripts/          # Optional: Helper scripts ├── examples/         # Optional: Reference implementations └── resources/        # Optional: Templates or assets
+## 2. YAML Frontmatter Standards
+
+The `SKILL.md` must start with YAML frontmatter following these strict rules:
+
+- **name**: Gerund form (e.g., `testing-code`, `managing-databases`). Max 64 chars. Lowercase, numbers, and hyphens only. Never include "claude", "anthropic", or "ai" in the name.
+- **description**: Written in **third person**. Must include 2-3 specific triggers/keywords. Max 1024 chars. Format: `[What it does]. Use when [trigger phrase 1], [trigger phrase 2], or [trigger phrase 3].`
+
+Example:
+```yaml
+---
+name: generating-reports
+description: Generates formatted PDF and HTML reports from data files. Use when user mentions "create report", "generate report", or "export data as PDF".
+---
+3. Required Sections
+Every SKILL.md must include these sections in order:
+Title (# Skill Name) - Clear, descriptive title
+Summary - One sentence describing what the skill accomplishes
+When to Use This Skill - 3+ specific trigger conditions as bullet points
+Prerequisites - Required tools/dependencies (if any)
+Workflow - Step-by-step instructions
+Validation - How to verify the skill executed correctly
+Error Handling - Table of common errors with causes and resolutions
+Resources - Links to scripts/, examples/, or ADVANCED.md (if applicable)
+4. Writing Principles (The "Claude Way")
+When writing the body of SKILL.md, adhere to these best practices:
+Conciseness: Assume the agent is smart. Do not explain what a PDF or a Git repo is. Focus only on the unique logic of the skill.
+Progressive Disclosure: Keep SKILL.md under 400 lines. If more detail is needed, create an ADVANCED.md file and link to it. Never nest documentation more than one level deep.
+Forward Slashes: Always use / for paths, never \\. Always use absolute paths starting with /mnt/skills/user/.
+Degrees of Freedom:Use Bullet Points for high-freedom tasks (heuristics, considerations).
+Use Code Blocks with Placeholders for medium-freedom (templates).
+Use Exact Bash Commands for low-freedom (fragile operations that must be precise).
+
+5. Workflow & Feedback Loops
+For complex tasks, include:
+Checklists: A markdown checklist the agent can copy and update to track state.## Progress Tracker
+- [ ] Step 1: Gather requirements
+- [ ] Step 2: Validate inputs
+- [ ] Step 3: Execute transformation
+- [ ] Step 4: Verify output
+
+Validation Loops: A "Plan-Validate-Execute" pattern:Plan: Generate the action plan without executing
+Validate: Run verification script or dry-run
+Execute: Apply changes only after validation passes
+Confirm: Verify the outcome matches expectations
+
+Error Cause Resolution     [Error message] [Why it happens] [How to fix]Error Handling: Use a table format for clarity:
+Black-Box Scripts: When referencing scripts, document only inputs/outputs. Always include: Run with --help for usage details. Specify expected exit codes (0 = success).
+6. Output Template
+When asked to create a skill, output the result in this exact format:
+Folder Structure
+Path: /mnt/skills/user/[skill-name]/
+SKILL.md
+---
+name: [gerund-name]
+description: [Third-person description]. Use when [trigger 1], [trigger 2], or [trigger 3].
+---
+
+# [Skill Title]
+
+[One-sentence summary of what this skill accomplishes.]
+
+## When to Use This Skill
+
+- [Specific trigger condition 1]
+- [Specific trigger condition 2]
+- [Specific trigger condition 3]
+
+## Prerequisites
+
+- [Required tool/dependency 1]
+- [Required tool/dependency 2]
+
+## Workflow
+
+### Step 1: [Action Name]
+[Instructions or code]
+
+### Step 2: [Action Name]
+[Instructions or code]
+
+## Validation
+
+[How to verify the skill executed correctly]
+
+## Error Handling
+
+| Error | Cause | Resolution |
+|-------|-------|------------|
+| [Error 1] | [Why it happens] | [How to fix] |
+
+## Resources
+
+- `scripts/[script-name].sh` - [Purpose]
+- `examples/[example-name]` - [What it demonstrates]
+Supporting Files
+(If applicable, provide the content for scripts/, examples/, or ADVANCED.md)
+7. Validation Checklist
+Before delivering any generated skill, verify:
+[ ] YAML frontmatter is valid and complete
+[ ] Name follows gerund-noun pattern (e.g., processing-images)
+[ ] Description is in third person and includes 2-3 trigger phrases
+[ ] "When to Use This Skill" section has 3+ specific conditions
+[ ] All paths use forward slashes and are absolute (/mnt/skills/user/...)
+[ ] No unexplained jargon or acronyms
+[ ] Line count under 400 (or ADVANCED.md created for overflow)
+[ ] At least one validation/verification step included
+[ ] Error handling table present with common issues
+8. Example: Complete Valid Skill
+---
+name: formatting-markdown
+description: Formats and lints Markdown files for consistency. Use when user mentions "clean up markdown", "format md files", or "markdown linting".
+---
+
+# Markdown Formatter
+
+Standardizes Markdown files using prettier and markdownlint.
+
+## When to Use This Skill
+
+- User wants to format `.md` files
+- User mentions markdown inconsistencies
+- Before committing documentation changes
+
+## Prerequisites
+
+- Node.js >= 18
+- npm
+
+## Workflow
+
+### Step 1: Install Dependencies
+```bash
+npm install -g prettier markdownlint-cli
+Step 2: Format Files
+prettier --write "**/*.md"
+markdownlint --fix "**/*.md"
+Validation
+Run markdownlint "**/*.md" — expect zero errors on success.
+Error Handling
+Error Cause Resolution     prettier: command not found Not installed Run npm install -g prettier   markdownlint warnings persist Unfixable issues Review manually, may need config changes
+Resources
+See examples/sample-formatted.md for reference output
+---
+
+## Instructions for Use
+
+When a user asks you to create a skill (e.g., "create a skill for automating X", "build me a skill that does Y"), follow these instructions to generate a complete, valid skill directory structure with all required files.
+
+Always place generated skills in `/mnt/skills/user/[skill-name]/`.
+
+¿Que es y para que sirven las Skills?
+Resumen Simple
+¿Qué es esto?
+Es una guía de instrucciones que le das a tu agente Antigravity para que sepa cómo crear "skills" (habilidades) de forma correcta y ordenada.
+¿Qué es una skill?
+Una skill es como una receta que le enseña al agente a hacer una tarea específica. Por ejemplo: "cómo formatear documentos", "cómo revisar código", "cómo generar reportes".
+¿Para qué sirve este documento?
+Sin estas instrucciones, cuando le pidas a Antigravity "créame una skill para X", podría hacerlo de cualquier manera, desordenado o incompleto.
+Con estas instrucciones, el agente siempre creará skills que:
+Tengan la misma estructura ordenada
+Incluyan cuándo usarla y cómo
+Expliquen qué hacer si algo falla
+Sean fáciles de entender y mantener
+
+En una frase
+Es un manual que asegura que todas las habilidades que cree tu agente estén bien hechas, organizadas y funcionen correctamente.
+
+https://www.notion.so/NotebookLM-ha-mejorado-x10-2f51412b021e805fb45ac3d410b78194

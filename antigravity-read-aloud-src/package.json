@@ -1,0 +1,66 @@
+{
+    "name": "antigravity-read-aloud",
+    "displayName": "Read Aloud (Antigravity)",
+    "description": "Lee el texto seleccionado en voz alta usando la voz nativa de Windows.",
+    "version": "1.0.0",
+    "publisher": "antigravity",
+    "engines": {
+        "vscode": "^1.74.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "antigravity-read-aloud.speakSelection",
+                "title": "Leer en voz alta",
+                "icon": "$(play)"
+            },
+            {
+                "command": "antigravity-read-aloud.stopSpeaking",
+                "title": "Detener lectura",
+                "icon": "$(stop)"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "editorHasSelection || editorTextFocus",
+                    "command": "antigravity-read-aloud.speakSelection",
+                    "group": "navigation"
+                },
+                {
+                    "when": "editorHasSelection || editorTextFocus",
+                    "command": "antigravity-read-aloud.stopSpeaking",
+                    "group": "navigation"
+                }
+            ],
+            "editor/title": [
+                {
+                    "command": "antigravity-read-aloud.speakSelection",
+                    "group": "navigation"
+                },
+                {
+                    "command": "antigravity-read-aloud.stopSpeaking",
+                    "group": "navigation"
+                }
+            ]
+        },
+        "keybindings": [
+            {
+                "command": "antigravity-read-aloud.speakSelection",
+                "key": "ctrl+shift+l",
+                "mac": "cmd+shift+l",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "antigravity-read-aloud.stopSpeaking",
+                "key": "ctrl+shift+s",
+                "mac": "cmd+shift+s",
+                "when": "editorTextFocus"
+            }
+        ]
+    }
+}
